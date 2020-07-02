@@ -1,6 +1,7 @@
 package com.chauncey.study.myrule;
 
 import com.netflix.loadbalancer.IRule;
+import com.netflix.loadbalancer.RandomRule;
 import com.netflix.loadbalancer.RoundRobinRule;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,9 +14,9 @@ import org.springframework.context.annotation.Configuration;
  * @Version 1.0
  **/
 @Configuration
-public class MyRule {
+public class MySelfRule {
     @Bean
     public IRule myRule() {
-        return new RoundRobinRule();
+        return new RandomRule();
     }
 }

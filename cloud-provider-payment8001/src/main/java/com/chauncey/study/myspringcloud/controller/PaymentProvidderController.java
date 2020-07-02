@@ -49,6 +49,7 @@ public class PaymentProvidderController {
     @GetMapping("/discovery")
     public CommonResult<List<String>> getDiscovery() {
         List<String> services = discoveryClient.getServices();
+
         return new CommonResult<List<String>>()
                 .ofSuccess(services);
     }
