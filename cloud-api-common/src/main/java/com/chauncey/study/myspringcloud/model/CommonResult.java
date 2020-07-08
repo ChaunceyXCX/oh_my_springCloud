@@ -31,6 +31,13 @@ public class CommonResult<T> {
         return this;
     }
 
+    public CommonResult<T> ofFail(T data,Integer code,String message) {
+        this.code = code;
+        this.message = message;
+        this.data = data;
+        return this;
+    }
+
     public CommonResult(T data) {
         this.data = data;
     }
