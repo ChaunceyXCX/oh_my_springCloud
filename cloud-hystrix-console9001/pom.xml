@@ -11,5 +11,12 @@
 
     <artifactId>cloud-hystrix-console9001</artifactId>
 
+    <dependencies>
+        <!--hystrix dashboard-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-hystrix-dashboard</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>
