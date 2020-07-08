@@ -21,7 +21,7 @@ spring:
 
 eureka:
   instance:
-    instance-id: payment8002
+    instance-id: consumer
     #访问路径可以显示IP地址
     prefer-ip-address: true
     #Eureka客户端向服务端发送心跳的时间间隔，单位为秒(默认是30秒)

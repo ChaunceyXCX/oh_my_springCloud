@@ -32,7 +32,8 @@ public class PaymentProvidderController {
     @ApiOperation(value = "获取信息",notes = "通过ID获取Payment")
     @GetMapping("/get/{id}")
     public CommonResult<Payment> getById(@PathVariable Long id) {
-        return new CommonResult<Payment>().ofSuccess(paymentRepository.getOne(id),serverPort);
+        //Payment payment = paymentRepository.findById(id).orElseGet(Payment::new);
+        return new CommonResult<Payment>().ofSuccess(paymentRepository.findById(id).get(),serverPort);
     }
 
     @PostMapping("/create")

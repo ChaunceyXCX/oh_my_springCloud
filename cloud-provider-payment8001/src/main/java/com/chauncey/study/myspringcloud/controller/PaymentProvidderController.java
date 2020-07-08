@@ -12,6 +12,7 @@ import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @ClassName PaymentProvidderController
@@ -38,6 +39,11 @@ public class PaymentProvidderController {
     @ApiOperation(value = "获取信息",notes = "通过ID获取Payment")
     @GetMapping("/get/{id}")
     public CommonResult<Payment> getById(@PathVariable Long id) {
+        try {
+            TimeUnit.SECONDS.sleep(10);
+        }catch (Exception e){
+            log.error(e.getMessage());
+        }
         return new CommonResult<Payment>().ofSuccess(paymentRepository.getOne(id),serverPort);
     }
 
