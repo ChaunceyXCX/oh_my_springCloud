@@ -1,0 +1,37 @@
+server:
+  port: 9527
+spring:
+  application:
+    name: cloud-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: get_message #路由ID
+          uri: lb://CLOUD-PROVIDER-PAYMENT  #路由地址
+          predicates:
+            - Path=/payment/get/**  #断言路径匹配
+        - id: create_message
+          uri: lb://CLOUD-PROVIDER-PAYMENT
+          predicates:
+            - Path=/payment/create
+      discovery:
+        locator:
+          enabled: true
+
+eureka:
+  instance:
+    instance-id: gateway9527
+    #访问路径可以显示IP地址
+    prefer-ip-address: true
+    #Eureka客户端向服务端发送心跳的时间间隔，单位为秒(默认是30秒)
+    #lease-renewal-interval-in-seconds: 1
+    #Eureka服务端在收到最后一次心跳后等待时间上限，单位为秒(默认是90秒)，超时将剔除服务
+    #lease-expiration-duration-in-seconds: 2
+  client:
+    # false 表示不向注册中心注册自己
+    register-with-eureka: true
+    # 服务端不需要去检索服务
+    fetch-registry: true
+    service-url:
+      # 设置与eureka server 交互的地址
+      defaultZone: http://eureka7001.com:7001/eureka/
