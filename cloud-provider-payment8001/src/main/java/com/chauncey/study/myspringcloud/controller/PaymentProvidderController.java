@@ -40,7 +40,7 @@ public class PaymentProvidderController {
     @GetMapping("/get/{id}")
     public CommonResult<Payment> getById(@PathVariable Long id) {
         try {
-            TimeUnit.SECONDS.sleep(10);
+            //TimeUnit.SECONDS.sleep(10);
         }catch (Exception e){
             log.error(e.getMessage());
         }
