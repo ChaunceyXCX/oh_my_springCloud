@@ -20,6 +20,13 @@
         <module>cloud-provider-hystrix-payment8001</module>
         <module>cloud-hystrix-console9001</module>
         <module>cloud-gateway-gateway9527</module>
+        <module>cloud-config-server3344</module>
+        <module>cloud-config-client3345</module>
+        <module>cloud-config-client3346</module>
+        <module>cloud-stream-rabbitmq-provider8801</module>
+        <module>cloud-stream-rabbit-consumer8802</module>
+        <module>cloud-stream-rabbitmq-consumer8803</module>
+        <module>cloud-zipkin-server</module>
     </modules>
 
     <!-- 统一管理jar包版本 -->
@@ -132,6 +139,5 @@
             </plugin>
         </plugins>
     </build>
-
 
 </project>
