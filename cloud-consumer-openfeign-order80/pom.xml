@@ -13,6 +13,17 @@
 
     <dependencies>
 
+        <!--zipkin-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-sleuth-zipkin</artifactId>
+        </dependency>
+        <!--&lt;!&ndash;sleuth&ndash;&gt;-->
+        <!--<dependency>-->
+        <!--    <groupId>org.springframework.cloud</groupId>-->
+        <!--    <artifactId>spring-cloud-starter-sleuth</artifactId>-->
+        <!--</dependency>-->
+
         <!--hystrix-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>

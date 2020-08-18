@@ -3,6 +3,8 @@ server:
 spring:
   application:
     name: cloud-openfeign-consumer
+  zipkin:
+    base-url: http://127.0.0.1:9411
   datasource:
     driverClassName: com.mysql.jdbc.Driver
     url: jdbc:mysql://webot.chauncey.top:13306/sp-std?useUnicode=true&zeroDateTimeBehavior=convertToNull&autoReconnect=true&characterEncoding=utf-8
@@ -36,7 +38,7 @@ eureka:
     fetch-registry: true
     service-url:
       # 设置与eureka server 交互的地址
-      defaultZone: http://eureka7001.com:7001/eureka/
+      defaultZone: http://127.0.0.1:7001/eureka/
 # 设置feign客户端超时时间(OpenFeign默认支持ribbon)
 ribbon:
   # 建立连接超时时间
@@ -46,6 +48,7 @@ ribbon:
 logging:
   level:
     com.chauncey.study.myspringcloud.service: debug
+    org.springframework.cloud.openfeign: debug
 
 feign:
   hystrix:

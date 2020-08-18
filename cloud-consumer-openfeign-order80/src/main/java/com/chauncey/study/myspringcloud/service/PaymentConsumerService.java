@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.PathVariable;
  * @Version 1.0
  **/
 @Service
-@FeignClient(value = "CLOUD-HYSTRIX-PROVIDER-PAYMENT",//指定服务域
+@FeignClient(value = "CLOUD-PROVIDER-PAYMENT",//指定服务域
         fallback = PaymentConsumerServiceFallBack.class ) //指定FallBack类
 public interface PaymentConsumerService {
 
